@@ -23,7 +23,8 @@ function initCamera() {
     // camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
     // camera.position.set(3, 3.5, 5);
     // camera.lookAt(scene.position);
-    
+            // create a camera, which defines where we're looking at.
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
      // position and point the camera to the center of the scene
         camera.position.x = -30;
         camera.position.y = 40;
