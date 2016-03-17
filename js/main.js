@@ -88,8 +88,8 @@ function initMesh() {
         mesh.translation = THREE.GeometryUtils.center(geometry);
                 // position the sphere
         mesh.position.x=20;
-        mesh.position.y=0;
-        mesh.position.z=2;
+        mesh.position.y=10;
+        mesh.position.z=-10;
         mesh.castShadow=true;
         scene.add(mesh);
     });
