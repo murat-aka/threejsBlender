@@ -87,7 +87,7 @@ function initMesh() {
         mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.75;
         mesh.translation = THREE.GeometryUtils.center(geometry);
                 // position the sphere
-        mesh.position.x=20;
+        mesh.position.x=5;
         mesh.position.y=10;
         mesh.position.z=-10;
         mesh.castShadow=true;
