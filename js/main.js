@@ -89,7 +89,7 @@ function initMesh() {
                 // position the sphere
         mesh.position.x=5;
         mesh.position.y=3;
-        mesh.position.z=-10;
+        mesh.position.z=-5;
         mesh.castShadow=true;
         scene.add(mesh);
     });
