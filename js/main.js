@@ -24,12 +24,24 @@ function initCamera() {
     camera.position.set(3, 3.5, 5);
     camera.lookAt(scene.position);
     
-        // add simple ground
-    var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
-    ground.receiveShadow = true;
-    ground.position.set(0, 0, 0);
-    ground.rotation.x = -Math.PI / 2;
-    this.scene.add(ground);
+    //     // add simple ground
+    // var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
+    // ground.receiveShadow = true;
+    // ground.position.set(0, 0, 0);
+    // ground.rotation.x = -Math.PI / 2;
+    // this.scene.add(ground);
+            // create the ground plane
+        var planeGeometry = new THREE.PlaneGeometry(60,20,1,1);
+        var planeMaterial =    new THREE.MeshLambertMaterial({color: 0xffffff});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.receiveShadow  = true;
+        // rotate and position the plane
+        plane.rotation.x=-0.5*Math.PI;
+        plane.position.x=15
+        plane.position.y=0
+        plane.position.z=0
+        // add the plane to the scene
+        scene.add(plane);
 }
 
 
