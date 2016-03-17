@@ -20,9 +20,15 @@ function init() {
 
 
 function initCamera() {
-    camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
-    camera.position.set(3, 3.5, 5);
-    camera.lookAt(scene.position);
+    // camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
+    // camera.position.set(3, 3.5, 5);
+    // camera.lookAt(scene.position);
+    
+     // position and point the camera to the center of the scene
+        camera.position.x = -30;
+        camera.position.y = 40;
+        camera.position.z = 30;
+        camera.lookAt(scene.position);
     
     //     // add simple ground
     // var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
