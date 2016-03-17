@@ -23,6 +23,13 @@ function initCamera() {
     camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
     camera.position.set(3, 3.5, 5);
     camera.lookAt(scene.position);
+    
+        // add simple ground
+    var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
+    ground.receiveShadow = true;
+    ground.position.set(0, 0, 0);
+    ground.rotation.x = -Math.PI / 2;
+    this.scene.add(ground);
 }
 
 
@@ -32,8 +39,16 @@ function initRenderer() {
 }
 
 function initLights() {
-    var light = new THREE.AmbientLight(0xffffff);
-    scene.add(light);
+    
+        // add spot light
+    var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
+    spLight.castShadow = true;
+    spLight.position.set(-100, 300, -50);
+    this.scene.add(spLight);
+    
+    
+    // var light = new THREE.AmbientLight(0xffffff);
+    // scene.add(light);
 }
 
 var mesh = null;
