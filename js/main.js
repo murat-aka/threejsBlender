@@ -59,12 +59,21 @@ function initRenderer() {
 
 function initLights() {
     
-        // add spot light
-    var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
-    spLight.castShadow = true;
-    spLight.position.set(-100, 300, -50);
-    this.scene.add(spLight);
-    
+    //     // add spot light
+    // var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
+    // spLight.castShadow = true;
+    // spLight.position.set(-100, 300, -50);
+    // this.scene.add(spLight);
+            // add subtle ambient lighting
+        var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+        scene.add(ambientLight);
+        
+        
+        // add spotlight for the shadows
+        var spotLight = new THREE.SpotLight( 0xffffff );
+        spotLight.position.set( -40, 60, -10 );
+        spotLight.castShadow = true;
+        scene.add( spotLight );
     
     // var light = new THREE.AmbientLight(0xffffff);
     // scene.add(light);
@@ -77,6 +86,11 @@ function initMesh() {
         mesh = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial(materials));
         mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.75;
         mesh.translation = THREE.GeometryUtils.center(geometry);
+                // position the sphere
+        mesh.position.x=20;
+        mesh.position.y=0;
+        mesh.position.z=2;
+        mesh.castShadow=true;
         scene.add(mesh);
     });
 }
